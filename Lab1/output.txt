@@ -1,0 +1,4 @@
+Max value: 7819
+Min value: 2424
+Total: 175206
+Average: 5005.89
