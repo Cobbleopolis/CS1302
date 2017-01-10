@@ -19,7 +19,7 @@ public class Lab1 {
         System.out.println("Max value: " + getMax(data)); // Prints the max value found in data.
         System.out.println("Min value: " + getMin(data)); // Prints the min value found in data.
         System.out.println("Total: " + getTotal(data)); // Prints the total of data.
-        System.out.println("Average: " + getAvg(data)); // Prints the average of data.
+        System.out.printf("Average: %.2f", getAvg(data)); // Prints the average of data.
     }
 
     /**
