@@ -1,4 +1,4 @@
-//Class:      CS1301/08
+package com.cobble.cs1302.lab1;//Class:      CS1301/08
 //Term:       Spring 2017
 //Name:       Logan Thompson
 //Instructor: Monisha Verma

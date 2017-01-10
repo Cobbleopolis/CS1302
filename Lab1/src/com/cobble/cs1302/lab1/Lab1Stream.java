@@ -1,3 +1,5 @@
+package com.cobble.cs1302.lab1;
+
 import java.util.IntSummaryStatistics;
 import java.util.stream.IntStream;
 

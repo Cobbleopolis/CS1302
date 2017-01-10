@@ -1,3 +1,5 @@
+package com.cobble.cs1302.lab1;
+
 public class Benchmark {
 
     public static void main(String[] args) {
