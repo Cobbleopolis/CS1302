@@ -1,5 +1,5 @@
-//Class:      CS1301
-//Term:       2017
+//Class:      CS1301/08
+//Term:       Spring 2017
 //Name:       Logan Thompson
 //Instructor: Monisha Verma
 //Assignment: Lab 1
