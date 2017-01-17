@@ -66,6 +66,8 @@ public class HW1 {
                     return true;
                 }
             }
+
+        //Returns false if no pattern is found
         return false;
     }
 }
