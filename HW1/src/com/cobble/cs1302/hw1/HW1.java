@@ -2,52 +2,29 @@
 //Term:       Spring 2017
 //Name:       Logan Thompson
 //Instructor: Monisha Verma
-//Assignment: HW 1
+//Assignment: Homework 1
 package com.cobble.cs1302.hw1;
+
+import java.util.Scanner;
 
 public class HW1 {
 
-    private static final int[][] data1 = {
-            {0, 1, 0, 3, 1, 6, 1},
-            {0, 1, 6, 8, 6, 0, 1},
-            {5, 6, 2, 1, 8, 2, 9},
-            {6, 5, 6, 1, 1, 9, 1},
-            {1, 3, 6, 1, 4, 0, 7},
-            {3, 3, 3, 3, 4, 0, 7}
-    };
-
-    private static final int[][] data2 = {
-            {0, 1, 0, 3, 1, 6, 1},
-            {0, 1, 6, 8, 6, 0, 1},
-            {5, 5, 2, 1, 8, 2, 9},
-            {6, 5, 6, 1, 1, 9, 1},
-            {1, 5, 6, 1, 4, 0, 7},
-            {3, 5, 3, 3, 4, 0, 7}
-    };
-
-    private static final int[][] data3 = {
-            {0, 1, 0, 3, 1, 6, 1},
-            {0, 1, 6, 8, 6, 0, 1},
-            {5, 6, 2, 1, 6, 2, 9},
-            {6, 5, 6, 6, 1, 9, 1},
-            {1, 3, 6, 1, 4, 0, 7},
-            {3, 6, 3, 3, 4, 0, 7}
-    };
-
-    private static final int[][] data4 = {
-            {0, 1, 0, 3, 1, 6, 1},
-            {0, 1, 6, 8, 6, 0, 1},
-            {9, 6, 2, 1, 8, 2, 9},
-            {6, 9, 6, 1, 1, 9, 1},
-            {1, 3, 9, 1, 4, 0, 7},
-            {3, 3, 3, 9, 4, 0, 7}
-    };
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        System.out.println(isConsecutiveFour(data1));
-        System.out.println(isConsecutiveFour(data2));
-        System.out.println(isConsecutiveFour(data3));
-        System.out.println(isConsecutiveFour(data4));
+        System.out.print("Enter the number of rows: ");
+        int numberOfRows = scanner.nextInt();
+        System.out.print("Enter the number of columns: ");
+        int numberOfColumns = scanner.nextInt();
+
+        int[][] data = new int[numberOfRows][numberOfColumns];
+
+        System.out.println("Enter the array values: ");
+        for (int i = 0; i < data.length; i++)
+            for (int j = 0; j < data[i].length; j++)
+                data[i][j] = scanner.nextInt();
+
+        System.out.println(isConsecutiveFour(data));
     }
 
     public static boolean isConsecutiveFour(int[][] values) {
@@ -59,7 +36,6 @@ public class HW1 {
             for (int j = 0; j <= row.length - 3; j++) {
                 int checkNum = row[j];
                 if (row[j + 1] == checkNum && row[j + 2] == checkNum && row[j + 3] == checkNum) {
-                    System.out.println(checkNum);
                     return true;
                 }
             }
@@ -69,7 +45,6 @@ public class HW1 {
             for (int j = 0; j < cols; j++) {
                 int checkNum = values[i][j];
                 if (values[i + 1][j] == checkNum && values[i + 2][j] == checkNum && values[i + 3][j] == checkNum) {
-                    System.out.println(checkNum);
                     return true;
                 }
             }
@@ -79,7 +54,6 @@ public class HW1 {
             for (int j = 0; j <= cols - 3; j++) {
                 int checkNum = values[i][j];
                 if (values[i - 1][j + 1] == checkNum && values[i - 2][j + 2] == checkNum && values[i - 3][j + 3] == checkNum) {
-                    System.out.println(checkNum);
                     return true;
                 }
             }
@@ -89,7 +63,6 @@ public class HW1 {
             for (int j = 0; j <= cols - 3; j++) {
                 int checkNum = values[i][j];
                 if (values[i + 1][j + 1] == checkNum && values[i + 2][j + 2] == checkNum && values[i + 3][j + 3] == checkNum) {
-                    System.out.println(checkNum);
                     return true;
                 }
             }
