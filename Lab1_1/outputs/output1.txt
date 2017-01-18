@@ -1,0 +1,16 @@
+Number of rows in matrix a: 3
+Number of columns in matrix a: 3
+Enter matrix a:
+1 2 3
+4 5 6
+7 8 9
+Number of rows in matrix b: 3
+Number of columns in matrix b: 3
+Enter matrix b:
+0 2 4
+1 4.5 2.2
+1.1 4.3 5.2
+
+ 1.0  2.0  3.0       0.0  2.0  4.0       5.3 23.9 24.0
+ 4.0  5.0  6.0   *   1.0  4.5  2.2   =  11.6 56.3 58.2
+ 7.0  8.0  9.0       1.1  4.3  5.2      17.9 88.7 92.4
