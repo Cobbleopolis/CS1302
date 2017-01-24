@@ -1,0 +1,114 @@
+Enter course grade for course# 0
+50.4
+Enter course grade for course# 1
+65.4
+Enter course grade for course# 2
+56.9
+Enter course grade for course# 3
+93.8
+Enter course grade for course# 0
+61.4
+Enter course grade for course# 1
+88.6
+Enter course grade for course# 2
+61.1
+Enter course grade for course# 3
+80.4
+Enter course grade for course# 0
+35.9
+Enter course grade for course# 1
+33.0
+Enter course grade for course# 2
+52.3
+Enter course grade for course# 3
+3.2
+Enter course grade for course# 0
+91.1
+Enter course grade for course# 1
+87.7
+Enter course grade for course# 2
+77.2
+Enter course grade for course# 3
+7.8
+Enter course grade for course# 0
+92.9
+Enter course grade for course# 1
+97.2
+Enter course grade for course# 2
+57.1
+Enter course grade for course# 3
+24.5
+
+
+Student: One, Person
+Course#     Point Grade    Letter Grade
+      0           50.40               F
+      1           65.40               D
+      2           56.90               F
+      3           93.80               A
+Avg GPA: D
+
+Student: Two, Person
+Course#     Point Grade    Letter Grade
+      0           61.40               D
+      1           88.60               B
+      2           61.10               D
+      3           80.40               B
+Avg GPA: C
+
+Student: Three, Person
+Course#     Point Grade    Letter Grade
+      0           35.90               F
+      1           33.00               F
+      2           52.30               F
+      3            3.20               F
+Avg GPA: F
+
+Student: Four, Person
+Course#     Point Grade    Letter Grade
+      0           91.10               A
+      1           87.70               B
+      2           77.20               C
+      3            7.80               F
+Avg GPA: D
+
+Student: Five, Person
+Course#     Point Grade    Letter Grade
+      0           92.90               A
+      1           97.20               A
+      2           57.10               F
+      3           24.50               F
+Avg GPA: D
+
+
+Course# 0
+   Student Name     Point Grade    Letter Grade
+    One, Person           50.40               F
+    Two, Person           61.40               D
+  Three, Person           35.90               F
+   Four, Person           91.10               A
+   Five, Person           92.90               A
+
+Course# 1
+   Student Name     Point Grade    Letter Grade
+    One, Person           65.40               D
+    Two, Person           88.60               B
+  Three, Person           33.00               F
+   Four, Person           87.70               B
+   Five, Person           97.20               A
+
+Course# 2
+   Student Name     Point Grade    Letter Grade
+    One, Person           56.90               F
+    Two, Person           61.10               D
+  Three, Person           52.30               F
+   Four, Person           77.20               C
+   Five, Person           57.10               F
+
+Course# 3
+   Student Name     Point Grade    Letter Grade
+    One, Person           93.80               A
+    Two, Person           80.40               B
+  Three, Person            3.20               F
+   Four, Person            7.80               F
+   Five, Person           24.50               F
