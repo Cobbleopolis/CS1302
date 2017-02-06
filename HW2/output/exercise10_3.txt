@@ -1,0 +1,9 @@
+n1 is even? false
+n1 is prime? true
+15 is prime? false
+3539
+3539
+n2 is odd? false
+45 is odd? true
+n1 is equal to n2? false
+n1 is equal to 5? true
