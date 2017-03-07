@@ -1,0 +1,13 @@
+created on Tue Mar 07 15:47:56 EST 2017
+color: white and filled: false
+Triangle: side1 = 2.0 side2 = 6.0 side3 = 5.0
+Area: 4.683748498798798
+Perimeter: 13.0
+
+Modified Triangle:
+
+created on Tue Mar 07 15:47:56 EST 2017
+color: yellow and filled: true
+Triangle: side1 = 1.0 side2 = 1.5 side3 = 1.0
+Area: 0.49607837082461076
+Perimeter: 3.5
