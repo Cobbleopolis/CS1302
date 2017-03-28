@@ -1,0 +1,7 @@
+Score results from text file:
+Total is 24.0
+Average is 39.166666666666664
+
+Score results from url:
+Total is 24.0
+Average is 33.333333333333336
