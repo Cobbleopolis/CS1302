@@ -1,0 +1,33 @@
+
+  ACME Inc.
+  123 Coffee Beans Street
+  Java, GA 99999
+
+
+
+
+
+  FirstNameFXO LastFXO
+  2510 Main Street
+  Suite 101D
+  City100, GA 72249
+
+
+                                                            04/18/2017
+
+
+
+  Dear FirstNameFXO LastFXO,
+
+      Our records shows unpaid balance of $280.80 that is over 120+ days old.
+  The balance due is now. If the balance is not fully paid in ten days
+  (by 04/28/2017), we will have to inform the collection agent for outstanding
+  balance plus %10 processing fee that increases total amount to $308.88.
+
+      If you have any questions or like to discuss a payment plan, please do
+  not hesitate our office at 555-555-5555.
+
+
+
+
+  Acme Financial Team

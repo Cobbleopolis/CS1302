@@ -24,7 +24,7 @@ public class Client {
     private double balance;
 
     public Client(String input) {
-        String[] fields = input.split("\\|");
+        String[] fields = input.split("\\|"); // Escape the pipe because split takes regex and pipe is used for the OR operator.
 
         this.firstName = fields[0];
         this.lastName = fields[1];
@@ -33,7 +33,7 @@ public class Client {
         this.city = fields[4];
         this.state = fields[5];
         this.zipCode = fields[6];
-        this.balance = Double.valueOf(fields[7].substring(1));
+        this.balance = Double.valueOf(fields[7].substring(1)); // Strip the $ from the string and convert to a double.
     }
 
     public String getFirstName() {
@@ -66,17 +66,6 @@ public class Client {
 
     public double getBalance() {
         return this.balance;
-    }
-
-    public String getFullAddress() {
-        return this.address1 + "\n" +
-                this.address2 +
-                "\n" +
-                this.city +
-                ", " +
-                this.state +
-                " " +
-                this.zipCode;
     }
 
     @Override
