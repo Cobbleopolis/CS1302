@@ -2,77 +2,67 @@
 //Term:       Spring 2017
 //Name:       Logan Thompson
 //Instructor: Monisha Verma
-//Assignment: Project 2 | Option 2
+//Assignment: Project 2 | Option 1
 package com.cobble.cs1302.project2;
 
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.GridPane;
-import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Date;
+import java.util.stream.Stream;
 
-import java.util.Random;
+public class Project2 {
 
-public class Project2 extends Application {
-
-    static Random rand = new Random(System.currentTimeMillis());
-
-    static final int BOARD_WIDTH = 4;
-
-    static final int BOARD_HEIGHT = 4;
+    private static String template;
 
     public static void main(String[] args) {
-        launch(args);
-    }
-
-    @Override
-    public void start(Stage primaryStage) {
-        primaryStage.setTitle("Card Game");
-        BorderPane root = new BorderPane();
-        root.setCenter(getGridPane());
-        root.setBottom(getInfoPane(primaryStage));
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
-    }
-
-    private static GridPane getGridPane() {
-        GridPane gridPane = new GridPane();
-        Card[][] cardArray = getRandomCardArray();
-        for (int y = 0; y < cardArray.length; y++)
-            for (int x = 0; x < cardArray[y].length; x++) {
-                Card card = cardArray[y][x];
-                gridPane.add(new Label(card.getSuit() + " | " + card.getRank()), x, y);
-            }
-        return gridPane;
-    }
-
-    private static BorderPane getInfoPane(Stage primaryStage) {
-        BorderPane infoPane = new BorderPane();
-        Button closeButton = new Button("Exit");
-        closeButton.setOnAction(event ->
-                primaryStage.fireEvent(new WindowEvent(primaryStage, WindowEvent.WINDOW_CLOSE_REQUEST))
-        );
-        infoPane.setRight(closeButton);
-        return infoPane;
-    }
-
-    private static Card[][] getRandomCardArray() {
-        Card[][] cardArray = new Card[BOARD_HEIGHT][BOARD_WIDTH];
-        Card[] deck = Card.getFullDeck(rand.nextInt(Card.DECK_SIZE) + (Card.MAX_SHUFFLE_COUNT - Card.DECK_SIZE));
-        for (int i = 0; i < (BOARD_WIDTH * BOARD_WIDTH) / 2; i++) {
-            for (int j = 0; j < 2; j++) {
-                int xLoc;
-                int yLoc;
-                do {
-                    xLoc = rand.nextInt(BOARD_WIDTH);
-                    yLoc = rand.nextInt(BOARD_HEIGHT);
-                } while (cardArray[yLoc][xLoc] != null);
-                cardArray[yLoc][xLoc] = deck[i];
-            }
+        StringBuilder templateBuilder = new StringBuilder(); // String builder for the template string.
+        try (Stream<String> stream = Files.lines(Paths.get("res/template.txt"))) { // read each line from the template file and appends it to the string builder.
+            stream.forEach((line) -> {
+                templateBuilder.append(line).append("\n");
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
         }
-        return cardArray;
+
+        template = templateBuilder.toString();
+
+        try (Stream<String> stream = Files.lines(Paths.get("res/dataCollection.txt"))) {
+            stream.forEach((line) -> {
+                Client client = new Client(line);
+                if (client.getBalance() > 5)
+                    printClientLetter(client);
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.exit(1);
+        }
+    }
+
+    public static void printClientLetter(Client client) {
+        try {
+            Date todayDate = new Date();
+            File letterFile = new File("out/ColLetter_" + client.getFirstName().substring(client.getFirstName().length() - 3) + ".txt");
+            File parent = letterFile.getParentFile();
+            if (!parent.exists())
+                parent.mkdirs();
+            if (!letterFile.exists())
+                letterFile.createNewFile();
+            FileOutputStream letterWriter = new FileOutputStream(letterFile);
+
+            String formattedLetter = template.replaceAll("\\{\\{FirstName}}", client.getFirstName())
+                    .replaceAll("\\{\\{LastName}}", client.getLastName())
+                    .replaceAll("\\{\\{Address1}}", client.getAddress1())
+                    .replaceAll("\\{\\{Address2}}", client.getAddress2());
+
+            letterWriter.write(formattedLetter.getBytes(StandardCharsets.UTF_8));
+            letterWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
